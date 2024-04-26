@@ -11,15 +11,15 @@ import numpy as np
 model= keras.models.load_model('CNN.h5')
 class_names=['Healthy', 'lumpy Disease']
 
-# try:
-#     # Disable all GPUS
-#     tf.config.set_visible_devices([], 'GPU')
-#     visible_devices = tf.config.get_visible_devices()
-#     for device in visible_devices:
-#         assert device.device_type != 'GPU'
-# except:
-#     # Invalid device or cannot modify virtual devices once initialized.
-#     pass
+try:
+    # Disable all GPUS
+    tf.config.set_visible_devices([], 'GPU')
+    visible_devices = tf.config.get_visible_devices()
+    for device in visible_devices:
+        assert device.device_type != 'GPU'
+except:
+    # Invalid device or cannot modify virtual devices once initialized.
+    pass
 #*** Backend operation
  
 # WSGI Application
